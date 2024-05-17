@@ -2,7 +2,7 @@ export const COLORS = {
   BLUE: '#0064e7',
   ORANGE: '#fe7d32',
   GREEN: '#1c7b20',
-  RED: '#f06159',
+  RED: '#ff0000',
   GOLD: '#FFD700',
   BLACK: '#0b0b0b',
   SILVER: '#efefef',

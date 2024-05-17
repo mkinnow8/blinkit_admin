@@ -1,4 +1,10 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ActivityIndicator,
+} from 'react-native';
 import React from 'react';
 import {
   respFontSize,
@@ -8,21 +14,30 @@ import {
 import {COLORS} from '../../resources';
 
 type Props = {
-  buttonText: string;
+  buttonText?: string;
   onPress?: () => void;
+  isLoading?: boolean;
 };
 
-export const GreenButtonComponent = ({buttonText, onPress}: Props) => {
+export const GreenButtonComponent = ({
+  buttonText,
+  onPress,
+  isLoading,
+}: Props) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.btnText}>{buttonText}</Text>
+      {isLoading ? (
+        <ActivityIndicator size="small" color={COLORS.WHITE} />
+      ) : (
+        <Text style={styles.btnText}>{buttonText}</Text>
+      )}
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    width: responsiveWidth(380),
+    width: '100%',
     height: responsiveHeight(48),
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,7 +46,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.GREEN,
     paddingVertical: responsiveHeight(4),
     paddingHorizontal: responsiveWidth(8),
-    marginBottom: responsiveHeight(12),
   },
   btnText: {
     color: COLORS.WHITE,

@@ -10,4 +10,8 @@ export const ROUTE = {
   ORDERS: 'OrdersScreen',
   ORDER_DETAIL: 'OrderDetailScreen',
   SEARCH: 'SearchScreen',
+  ADMIN_DASHBOARD: 'Dashboard',
+  CATEGORY: 'Category',
+  SUB_CATEGORY: 'Sub Category',
+  PRODUCT: 'Product',
 };

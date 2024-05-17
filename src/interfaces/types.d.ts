@@ -5,22 +5,22 @@ interface Bestseller {
     products: Product[];
   }
 
-type Product = {
-    id: string;
-    parentId: string | null;
-    deliveryTime: string;
-    name: string;
-    photos: any[]; 
-    discountAvailable: boolean;
-    discountPrize?: string; 
-    actualPrize: string;
-    discountOff?: string; 
-    units: string;
-    companyName: string;
-    optionsAvailable: boolean;
-    options?: ProductOption[];
-    productDetail?: string;
-}
+// type Product = {
+//     id: string;
+//     parentId: string | null;
+//     deliveryTime: string;
+//     name: string;
+//     photos: any[]; 
+//     discountAvailable: boolean;
+//     discountPrize?: string; 
+//     actualPrize: string;
+//     discountOff?: string; 
+//     units: string;
+//     companyName: string;
+//     optionsAvailable: boolean;
+//     options?: ProductOption[];
+//     productDetail?: string;
+// }
 
 
 type ProductOption = {
@@ -35,19 +35,19 @@ type ProductOption = {
     discountAvailable: boolean;
 }
 
-type SubCategory = {
-  id: string;
-  title: string;
-  image: any; 
-  productList: Product[];
-}
+// type SubCategory = {
+//   id: string;
+//   title: string;
+//   image: any; 
+//   productList: Product[];
+// }
 
-type Category = {
-  id: string;
-  image: any; 
-  title: string;
-  subCategories?:  SubCategory[];
-}
+// type Category = {
+//   id: string;
+//   image: any; 
+//   title: string;
+//   subCategories?:  SubCategory[];
+// }
 
 type UserInfo = {
   id: string,
@@ -60,7 +60,9 @@ type UserInfo = {
 
 type User = {
   userInfo: UserInfo | null;
+  role: string | null
   isLoggedIn: boolean;
+  isLoading: boolean;
   token: string | null;
 }
 
@@ -95,4 +97,52 @@ type Order = {
 
 type Orders = {
   ordersList: Order[] | [],
+}
+
+type Category = {
+  _id: string,
+  name: string,
+  image_url: string,
+}
+
+type SubCategory = {
+  _id: string,
+  name: string,
+  image_url: string,
+  category_id: string,
+}
+
+type Image = string
+
+type Varient = {
+  images: Image[],
+  discount_available: boolean,
+  discount_price: string,
+  max_retail_price: string,
+  discount_percentage: string,
+  units: string,
+  total_quantity: string,
+}
+
+
+interface ProductVariant {
+  _id: string;
+  image_urls: string[];
+  discount_available: boolean;
+  discount_price?: string;
+  max_retail_price: string;
+  discount_percentage?: string;
+  units: string;
+  total_quantity: string;
+}
+
+interface Product {
+  _id: string;
+  name: string;
+  image_url: string;
+  company_name: string;
+  product_description: string;
+  number_of_variants: string;
+  subcategory_id: string;
+  variants: ProductVariant[];
 }

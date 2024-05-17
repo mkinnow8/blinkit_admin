@@ -17,3 +17,12 @@ export * from './OrderCardComponent/OrderCardComponent';
 export * from './RecentSearchComponent/RecentSearchComponent';
 export * from './Buttons/GreenButtonComponent';
 export * from './Inputs/LoginInputComponent';
+export * from './Inputs/ImageInputComponent';
+export * from './Inputs/DropdownInputComponent';
+export * from './OptionsButtonComponent/OptionsButtonComponent'
+export * from './HeadingTextComponent/HeadingTextComponent';
+export * from './Modals/EditCategoryModal';
+export * from './Modals/EditSubCategoryModal';
+export * from './Modals/CommonDeleteModal';
+export * from './Modals/AddVariantComponent';
+export * from './Commons/ViewItemComponent'

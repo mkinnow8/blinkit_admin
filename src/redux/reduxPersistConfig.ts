@@ -4,6 +4,7 @@ import { persistReducer } from 'redux-persist';
 import UserReducer from './slices/UserSlice';
 import CartReducer from './slices/CartSlice';
 import OrdersReducer from './slices/OrdersSlice';
+import LocaleReducer from './slices/LocaleSlice';
 
 
 const persistConfig = {
@@ -17,6 +18,8 @@ const rootReducer = combineReducers({
     User: UserReducer,
     Cart: CartReducer,
     Order: OrdersReducer,
+    Locale: LocaleReducer,
+
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

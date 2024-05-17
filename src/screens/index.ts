@@ -8,3 +8,8 @@ export * from './ProfileScreen/OrdersScreen';
 export * from './ProfileScreen/OrderDetailScreen';
 export * from './SearchScreen/SearchScreen';
 export * from './SigninScreen/LoginScreen';
+export * from './SigninScreen/RegisterScreen';
+export * from './Admin/Dashboard';
+export * from './Admin/Category/CategoryScreen';
+export * from './Admin/SubCategory/SubCategoryScreen';
+export * from './Admin/Product/ProductScreen';

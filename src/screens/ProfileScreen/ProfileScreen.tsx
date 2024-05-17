@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import React from 'react';
-import {settingsData, supportData} from '../../utilities/dataObjects';
 import {
   respFontSize,
   responsiveHeight,
@@ -16,7 +15,7 @@ import {
 import {COLORS, ROUTE} from '../../resources';
 import {CustomHeaderComponent} from '../../components';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
-import {userLoggedOut} from '../../redux/slices/UserSlice';
+import {userLoggedOut, userLogoutRequested} from '../../redux/slices/UserSlice';
 import {handleGoogleLogout} from '../../services/GoogleAuthentication';
 import {useNavigation} from '@react-navigation/native';
 
@@ -27,8 +26,9 @@ export const ProfileScreen = (props: Props) => {
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
   const handleLogout = async () => {
-    await handleGoogleLogout();
-    dispatch(userLoggedOut({}));
+    // await handleGoogleLogout();
+    // dispatch(userLoggedOut({}));
+    dispatch(userLogoutRequested({}));
   };
   return (
     <>
